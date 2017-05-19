@@ -1,0 +1,22 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE ESCALADE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ESCALADE package.
+# Alexandre DELAUNAY <adelaunay@teclib.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ESCALADE 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-30 09:41+0200\n"
+"PO-Revision-Date: 2013-07-30 09:49+0100\n"
+"Last-Translator: Alexandre Delaunay <adelaunay@teclib.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+
+msgid "Before you enable Clone plugin make sure your file <b>inc/html.class.php</b> is owned by apache user, usually www-data or wwwrun"
+msgstr "Avant d'activer le plugin Clone assurez-vous que votre fichier <b>inc/html.class.php</b> est possédée par l'utilisateur apache, habituellement www-data ou wwwrun"
+

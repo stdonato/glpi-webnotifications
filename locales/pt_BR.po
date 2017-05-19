@@ -1,0 +1,20 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE ESCALADE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ESCALADE package.
+# Alexandre DELAUNAY <adelaunay@teclib.com>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ESCALADE 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-30 09:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Alexandre DELAUNAY <adelaunay@teclib.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Before you enable Clone plugin make sure your file <b>inc/html.class.php</b> is owned by apache user, usually www-data or wwwrun"
+msgstr "Antes de habilitar o plugin certificar-se de seu arquivo <b>inc/html.class.php</b> é de propriedade do usuário do apache, geralmente www-data ou wwwrun"
