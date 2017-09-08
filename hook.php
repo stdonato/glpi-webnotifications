@@ -12,19 +12,21 @@ function plugin_webnotifications_install(){
 				";
         $DB->query($query) or die("error creating glpi_plugin_webnotifications_count " . $DB->error());
         
-        $insert = "INSERT INTO glpi_plugin_webnotifications_count (users_id, quant) VALUES ('1','1','0')";
+        $insert = "INSERT INTO glpi_plugin_webnotifications_count (users_id, quant, type) VALUES ('1','1','0')";
         $DB->query($insert);
     } 	
     
     if (! TableExists("glpi_plugin_webnotifications_count_req")) {
-        $query = "CREATE TABLE `glpi_plugin_webnotifications_count_req` (`users_id` INTEGER NOT NULL,
-        `quant` INTEGER, `type` int(2) NOT NULL,
+        $query = "CREATE TABLE `glpi_plugin_webnotifications_count_req` (
+        `users_id` INTEGER NOT NULL,
+        `quant` INTEGER, 
+        `type` int(2) NOT NULL,
         PRIMARY KEY (`users_id`,`type`))
 		  ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 				";
         $DB->query($query) or die("error creating glpi_plugin_webnotifications_count_req " . $DB->error());
         
-        $insert = "INSERT INTO glpi_plugin_webnotifications_count_req (users_id, quant) VALUES ('1','2','0')";
+        $insert = "INSERT INTO glpi_plugin_webnotifications_count_req (users_id, quant, type) VALUES ('1','2','0')";
         $DB->query($insert);
     }
     
@@ -58,9 +60,9 @@ function plugin_webnotifications_install(){
     }
         	
        //disable olds versions 	
-		$search = "include('../plugins/webnotifications/front/notifica.php');";	
-		$replace = "";
-		file_put_contents('../../inc/html.class.php', str_replace($search, $replace, file_get_contents('../../inc/html.class.php')));
+		//$search = "include('../plugins/webnotifications/front/notifica.php');";	
+		//$replace = "";
+		//file_put_contents('../../inc/html.class.php', str_replace($search, $replace, file_get_contents('../../inc/html.class.php')));
 		        	     	       	
 	return true;
 }
@@ -70,14 +72,17 @@ function plugin_webnotifications_uninstall(){
 
 	global $DB;
 	
-$drop = "DROP TABLE glpi_plugin_webnotifications_count";
-$DB->query($drop); 	
-
-$drop_g = "DROP TABLE glpi_plugin_webnotifications_count_grp";
-$DB->query($drop_g); 	
-
-$drop_c = "DROP TABLE glpi_plugin_webnotifications_config";
-$DB->query($drop_c);
+	$drop = "DROP TABLE glpi_plugin_webnotifications_count";
+	$DB->query($drop); 	
+	
+	$drop_g = "DROP TABLE glpi_plugin_webnotifications_count_grp";
+	$DB->query($drop_g); 	
+	
+	$drop_r = "DROP TABLE glpi_plugin_webnotifications_count_req";
+	$DB->query($drop_r); 	
+	
+	$drop_c = "DROP TABLE glpi_plugin_webnotifications_config";
+	$DB->query($drop_c);
 	
 	return true;
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 if (!defined('GLPI_ROOT')) {
    die("Sorry. You can't access directly to this file");
 }
@@ -12,12 +11,8 @@ if (!defined("GLPI_NOT_DIR")) {
 class PluginWebnotifications extends CommonDBTM {
 
    static function notify() {
-      global $CFG_GLPI;
-      
+      global $CFG_GLPI;     
 	   include(GLPI_NOT_DIR.'/front/notifica.php');
-
 	}
-	
-
 }
 ?>

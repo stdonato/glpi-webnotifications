@@ -12,7 +12,7 @@ $plugin = new Plugin();
 	$string = file_get_contents( $file ); 
 	// poderia ser um string ao invés de file_get_contents().  /(.*).php  js/notify(.*)<
 	
-	$acha = preg_match('/notifica.php/', $string, $matches );
+	$acha = preg_match('notifica.php/', $string, $matches );
 
 	echo "<div class='center' style='height:300px; width:80%; background:#fff; margin:auto; float:none;'><br><p>\n";
    echo "<div id='config' class='center here ui-tabs-panel'>\n";
@@ -52,7 +52,7 @@ $action = $_REQUEST['opt'];
 		
 		$search = "// End of Head";		
 		$replace = "// End of Head\n";		
-		$replace .= "include('../plugins/webnotifications/front/notifica.php');";
+		$replace .= "include('../plugins/webnotifications/notifica.php');";
 		file_put_contents('../../../inc/html.class.php', str_replace($search, $replace, file_get_contents('../../../inc/html.class.php')));
 		
 		echo "<div id='config' class='center' style='font-size:18px;'>";
@@ -62,7 +62,7 @@ $action = $_REQUEST['opt'];
 	
 	if($action == 'desativar') {
 		
-		$search = "include('../plugins/webnotifications/front/notifica.php');";	
+		$search = "include('../plugins/webnotifications/notifica.php');";	
 		$replace = "";
 		file_put_contents('../../../inc/html.class.php', str_replace($search, $replace, file_get_contents('../../../inc/html.class.php')));
 		
@@ -95,7 +95,7 @@ if(isset($_REQUEST['sound'])) {
 }	   
 
 echo "<div id='config' class='center'>
-		<a class='vsubmit' type='submit' onclick=\"window.location.href = '". $CFG_GLPI['root_doc'] ."/front/plugin.php';\" >  ".__('Back')." </a> 
+			<a class='vsubmit' type='submit' onclick=\"window.location.href = '". $CFG_GLPI['root_doc'] ."/front/plugin.php';\" >  ".__('Back')." </a> 
 		</div></div>\n";
 
 ?>
